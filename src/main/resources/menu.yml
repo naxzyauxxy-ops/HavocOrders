@@ -1,0 +1,431 @@
+MENUS:
+
+  # ======================| GLOBAL ITEMS |======================
+
+  GLOBAL_ITEMS:
+    FILLER:
+      MATERIAL: BLACK_STAINED_GLASS_PANE
+      NAME: " "
+    BACK:
+      MATERIAL: RED_CONCRETE
+      NAME: "&#f40d0dʙᴀᴄᴋ"
+      LORE:
+        - "&7Click to go to the previous page ({current}/{total})"
+    NEXT:
+      MATERIAL: GREEN_CONCRETE
+      NAME: "&#f40d0dɴᴇxᴛ"
+      LORE:
+        - "&7Click to go to the next page ({next}/{total})"
+
+  # ======================| DELIVER |======================
+
+  DELIVER-ITEMS-MENU:
+    TITLE: "&8ᴏʀᴅᴇʀѕ -> Deliver Items"
+    SIZE: 36
+    # Slots 0-26 are the deposit area. Anything left there is returned on close.
+    ORDER-BUTTON:
+      SLOT: 27
+      NAME: "&#f40d0d{player}'s Order"
+      LORE:
+        - "&f{material}"
+        - "&#f40d0d${unit_price} &feach"
+        - ""
+        - "&7{current}/{max} &8Delivered"
+        - "&7Place items above, then confirm"
+    CONFIRM-BUTTON:
+      MATERIAL: "LIME_CONCRETE"
+      SLOT: 31
+      NAME: "&#f40d0dᴄᴏɴꜰɪʀᴍ"
+      LORE:
+        - "&fClick to deliver the items above"
+    DEPOSIT-ALL-BUTTON:
+      MATERIAL: "HOPPER"
+      SLOT: 29
+      NAME: "&#f40d0dᴅᴇᴘᴏѕɪᴛ ᴀʟʟ"
+      LORE:
+        - "&fPull every matching item out of your inventory"
+    CANCEL-BUTTON:
+      MATERIAL: "RED_CONCRETE"
+      SLOT: 35
+      NAME: "&#f40d0dᴄᴀɴᴄᴇʟ"
+      LORE:
+        - "&fClick to return"
+
+  # ======================| YOUR ORDERS |======================
+
+  YOUR-ORDERS-MENU:
+    TITLE: "&8ᴏʀᴅᴇʀѕ -> Your Orders"
+    SIZE: 27
+    NEW-ORDER-SLOT: 26
+    BACK-SLOT: 18
+    ORDER-BUTTON:
+      NAME: "&#f40d0d{player}'s Order"
+      LORE:
+        - "&f{material}"
+        - "&#f40d0d${unit_price} &feach"
+        - ""
+        - "&7{current}/{max} &8Delivered"
+        - "&7${paid}/${max_paid} &8Paid"
+        - ""
+        - "&8{expires} Until Order expires"
+    NEW-ORDER-BUTTON:
+      MATERIAL: "MAP"
+      NAME: "&#f40d0dNew Order"
+      LORE:
+        - "&7Click to create a new order."
+
+  EDIT-ORDER-MENU:
+    TITLE: "&8ᴏʀᴅᴇʀѕ -> Edit Order"
+    SIZE: 27
+    ORDER-SLOT: 13
+    CANCEL-SLOT: 11
+    COLLECT-SLOT: 15
+    BACK-SLOT: 18
+    ORDER-BUTTON:
+      NAME: "&#f40d0d{player}'s Order"
+      LORE:
+        - "&f{material}"
+        - "&#f40d0d${unit_price} &feach"
+        - ""
+        - "&7{current}/{max} &8Delivered"
+        - "&7${paid}/${max_paid} &8Paid"
+        - ""
+        - "&8{expires} Until Order expires"
+    CANCEL-BUTTON:
+      MATERIAL: "RED_CONCRETE"
+      NAME: "&#f40d0dᴄᴀɴᴄᴇʟ"
+      LORE:
+        - "&fClick to cancel this order"
+    COLLECT-BUTTON:
+      MATERIAL: "CHEST"
+      NAME: "&#f40d0dᴄᴏʟʟᴇᴄᴛ"
+      LORE:
+        - "&fClick to collect items"
+        - "&7({collectable} waiting)"
+
+  NEW-ORDER-MENU:
+    TITLE: "&8ᴏʀᴅᴇʀѕ -> New Order"
+    SIZE: 27
+    ITEM-SLOT: 10
+    AMOUNT-SLOT: 12
+    PRICE-SLOT: 14
+    CONFIRM-SLOT: 16
+    CANCEL-SLOT: 22
+    CANCEL-BUTTON:
+      MATERIAL: "RED_CONCRETE"
+      NAME: "&#f40d0dᴄᴀɴᴄᴇʟ"
+      LORE:
+        - "&fClick to return"
+    ITEM-BUTTON:
+      MATERIAL: "BARRIER"
+      NAME: "&#f40d0dɪᴛᴇᴍ"
+      LORE:
+        - "&fClick to choose item"
+        - "&7({material})"
+    AMOUNT-BUTTON:
+      MATERIAL: "CHEST"
+      NAME: "&#f40d0dᴀᴍᴏᴜɴᴛ"
+      LORE:
+        - "&7({amount})"
+      SIGN-TITLE: "Amount"
+    PRICE-BUTTON:
+      MATERIAL: "EMERALD"
+      NAME: "&#f40d0dᴘʀɪᴄᴇ"
+      LORE:
+        - "&7(${price})"
+      SIGN-TITLE: "Price"
+    CONFIRM-BUTTON:
+      MATERIAL: "LIME_CONCRETE"
+      NAME: "&#f40d0dᴄᴏɴꜰɪʀᴍ"
+      LORE:
+        - "&fClick to confirm order"
+        - "&7(Total: ${total})"
+
+  # ======================| ORDERS |======================
+
+  ORDERS-MENU:
+    TITLE: "&8ᴏʀᴅᴇʀѕ"
+    ITEMS-PER-PAGE: 45
+    SORT-OPTIONS:
+      MOST-PAID: "Most Paid"
+      MOST-DELIVERED: "Most Delivered"
+      RECENTLY-LISTED: "Recently Listed"
+      MOST-MONEY-PER-ITEM: "Most Money Per Item"
+    BUTTONS:
+      ORDER-BUTTON:
+        NAME: "&#f40d0d{player}'s Order"
+        LORE:
+          - "&f{material}"
+          - "&#f40d0d${unit_price} &feach"
+          - ""
+          - "&7{current}/{max} &8Delivered"
+          - "&7${paid}/${max_paid} &8Paid"
+          - ""
+          - "&fClick to deliver &#f40d0d{player} &f{material}"
+          - "&7Shift-Click to deliver everything you have"
+          - "&8{expires} Until Order expires"
+      REFRESH-BUTTON:
+        MATERIAL: "MAP"
+        SLOT: 49
+        NAME: "&#f40d0dᴏʀᴅᴇʀѕ"
+        LORE:
+          - "&fClick to refresh"
+      SORT-BUTTON:
+        MATERIAL: "CAULDRON"
+        SLOT: 47
+        NAME: "&#f40d0dѕᴏʀᴛ"
+        SELECTED-FORMAT: "&#f40d0d▪ {option}"
+        UNSELECTED-FORMAT: "&f▪ {option}"
+      FILTER-BUTTON:
+        MATERIAL: "HOPPER"
+        SLOT: 48
+        NAME: "&#f40d0dꜰɪʟᴛᴇʀ"
+        SELECTED-FORMAT: "&#f40d0d▪ {option}"
+        UNSELECTED-FORMAT: "&f▪ {option}"
+        NAMES:
+          ALL: "All"
+          BLOCKS: "Blocks"
+          TOOLS: "Tools"
+          FOOD: "Food"
+          COMBAT: "Combat"
+          POTIONS: "Potions"
+          BOOKS: "Books"
+          INGREDIENTS: "Ingredients"
+          UTILITIES: "Utilities"
+      SEARCH-BUTTON:
+        MATERIAL: "OAK_SIGN"
+        SLOT: 50
+        NAME: "&#f40d0dѕᴇᴀʀᴄʜ"
+        LORE:
+          - "&fClick to search"
+          - "&7({query})"
+        SIGN-TITLE: "Search"
+      YOUR-ORDERS-BUTTON:
+        MATERIAL: "CHEST"
+        SLOT: 51
+        NAME: "&#f40d0dʏᴏᴜʀ ᴏʀᴅᴇʀѕ"
+        LORE:
+          - "&fClick to view your orders"
+      PAGE-BUTTON:
+        MATERIAL: "ARROW"
+        BACK-SLOT: 45
+        NEXT-SLOT: 53
+        NEXT-NAME: "&#f40d0dɴᴇxᴛ"
+        BACK-NAME: "&#f40d0dʙᴀᴄᴋ"
+        LAST-PAGE-NAME: "&#f40d0dʟᴀѕᴛ ᴘᴀɢᴇ"
+        FIRST-PAGE-NAME: "&#f40d0dꜰɪʀѕᴛ ᴘᴀɢᴇ"
+        NEXT-LORE:
+          - "&fClick to go to the next page"
+        BACK-LORE:
+          - "&fClick to go to the previous page"
+        LAST-PAGE-LORE:
+          - "&fYou are already on the last page"
+        FIRST-PAGE-LORE:
+          - "&fYou are already on the first page"
+
+  SELECT-ITEM-MENU:
+    TITLE: "&8ᴏʀᴅᴇʀѕ -> Select Item"
+    ITEMS-PER-PAGE: 45
+    POTION-SUFFIXES:
+      POTION: ""
+      SPLASH_POTION: " (Splash)"
+      LINGERING_POTION: " (Lingering)"
+    SORT-OPTIONS:
+      A-TO-Z: "A to Z"
+      Z-TO-A: "Z to A"
+    BUTTONS:
+      ITEM-BUTTON:
+        NAME: "&f{name}"
+        LORE:
+          - "&fClick to select"
+      ENCHANTED-BOOK-BUTTON:
+        NAME: "&f{enchantment} {level}"
+        LORE:
+          - "&fClick to select"
+      POTION-BUTTON:
+        NAME: "&f{type}{suffix}"
+        LORE:
+          - "&fClick to select"
+      SORT-BUTTON:
+        MATERIAL: "CAULDRON"
+        SLOT: 48
+        NAME: "&#f40d0dѕᴏʀᴛ"
+        SELECTED-FORMAT: "&#f40d0d▪ {option}"
+        UNSELECTED-FORMAT: "&f▪ {option}"
+      FILTER-BUTTON:
+        MATERIAL: "HOPPER"
+        SLOT: 49
+        NAME: "&#f40d0dꜰɪʟᴛᴇʀ"
+        SELECTED-FORMAT: "&#f40d0d▪ {option}"
+        UNSELECTED-FORMAT: "&f▪ {option}"
+      SEARCH-BUTTON:
+        MATERIAL: "OAK_SIGN"
+        SLOT: 50
+        NAME: "&#f40d0dѕᴇᴀʀᴄʜ"
+        LORE:
+          - "&fClick to search"
+          - "&7({query})"
+        SIGN-TITLE: "Search"
+      CANCEL-BUTTON:
+        MATERIAL: "RED_CONCRETE"
+        SLOT: 47
+        NAME: "&#f40d0dᴄᴀɴᴄᴇʟ"
+        LORE:
+          - "&fClick to return"
+      PAGE-BUTTON:
+        MATERIAL: "ARROW"
+        BACK-SLOT: 45
+        NEXT-SLOT: 53
+        NEXT-NAME: "&#f40d0dɴᴇxᴛ"
+        BACK-NAME: "&#f40d0dʙᴀᴄᴋ"
+        LAST-PAGE-NAME: "&#f40d0dʟᴀѕᴛ ᴘᴀɢᴇ"
+        FIRST-PAGE-NAME: "&#f40d0dꜰɪʀѕᴛ ᴘᴀɢᴇ"
+        NEXT-LORE:
+          - "&fClick to go to the next page"
+        BACK-LORE:
+          - "&fClick to go to the previous page"
+        LAST-PAGE-LORE:
+          - "&fYou are already on the last page"
+        FIRST-PAGE-LORE:
+          - "&fYou are already on the first page"
+
+  CANCEL-ORDER-MENU:
+    TITLE: "&8ᴏʀᴅᴇʀѕ -> Cancel Order"
+    SIZE: 27
+    CANCEL-SLOT: 11
+    ORDER-SLOT: 13
+    CONFIRM-SLOT: 15
+    BUTTONS:
+      CANCEL-BUTTON:
+        MATERIAL: "RED_CONCRETE"
+        NAME: "&cCancel"
+        LORE:
+          - "&fClick to go back"
+      ORDER-ITEM-BUTTON:
+        NAME: "&#f40d0dOrder Item"
+        LORE:
+          - "&f{material}"
+          - "&#f40d0d${unit_price} &feach"
+          - ""
+          - "&7{current}/{max} &8Delivered"
+          - "&7${paid}/${max_paid} &8Paid"
+          - ""
+          - "&7Refund: &#f40d0d${refund}"
+          - "&8{expires} Until Order expires"
+      CONFIRM-BUTTON:
+        MATERIAL: "LIME_CONCRETE"
+        NAME: "&#f40d0dᴄᴏɴꜰɪʀᴍ"
+        LORE:
+          - "&fClick to cancel order"
+
+  COLLECT-ITEMS-MENU:
+    TITLE: "&8ᴏʀᴅᴇʀѕ -> Collect Items"
+    SIZE: 54
+    ITEMS-PER-PAGE: 45
+    BUTTONS:
+      LOOT-BUTTON:
+        LORE:
+          - "&7From &#f40d0d{player}&7's order"
+          - "&fClick to collect"
+          - "&7Sell value: &#f40d0d${value}"
+      SELL-ALL-BUTTON:
+        MATERIAL: "EMERALD"
+        SLOT: 50
+        NAME: "&#f40d0dѕᴇʟʟ ᴀʟʟ"
+        LORE:
+          - "&fClick to sell all"
+          - "&7({total_items} items, &#f40d0d${total}&7)"
+      DROP-ALL-BUTTON:
+        MATERIAL: "HOPPER"
+        SLOT: 48
+        NAME: "&#f40d0dᴅʀᴏᴘ ʟᴏᴏᴛ"
+        LORE:
+          - "&fClick to drop all loot on the page"
+      COLLECT-ALL-BUTTON:
+        MATERIAL: "CHEST"
+        SLOT: 49
+        NAME: "&#f40d0dᴄᴏʟʟᴇᴄᴛ ᴀʟʟ"
+        LORE:
+          - "&fClick to collect everything that fits"
+      BACK-BUTTON:
+        MATERIAL: "RED_CONCRETE"
+        SLOT: 47
+        NAME: "&#f40d0dʙᴀᴄᴋ"
+        LORE:
+          - "&fClick to return"
+      PAGE-BUTTON:
+        MATERIAL: "ARROW"
+        BACK-SLOT: 45
+        NEXT-SLOT: 53
+        NEXT-NAME: "&#f40d0dɴᴇxᴛ"
+        BACK-NAME: "&#f40d0dʙᴀᴄᴋ"
+        LAST-PAGE-NAME: "&#f40d0dʟᴀѕᴛ ᴘᴀɢᴇ"
+        FIRST-PAGE-NAME: "&#f40d0dꜰɪʀѕᴛ ᴘᴀɢᴇ"
+        NEXT-LORE:
+          - "&fClick to go to the next page"
+        BACK-LORE:
+          - "&fClick to go to the previous page"
+        LAST-PAGE-LORE:
+          - "&fYou are already on the last page"
+        FIRST-PAGE-LORE:
+          - "&fYou are already on the first page"
+
+  ORDER-CONFIRM-SELL-MENU:
+    TITLE: "&8ᴏʀᴅᴇʀѕ -> Confirm Sell"
+    SIZE: 27
+    CANCEL-SLOT: 11
+    ITEM-SLOT: 13
+    CONFIRM-SLOT: 15
+    BUTTONS:
+      CANCEL-BUTTON:
+        MATERIAL: "RED_CONCRETE"
+        NAME: "&#f40d0dᴄᴀɴᴄᴇʟ"
+        LORE:
+          - "&fClick to go back"
+      ITEM-BUTTON:
+        MATERIAL: "CHEST"
+        NAME: "&#f40d0d{player}'s Loot"
+        LORE:
+          - "&#f40d0d{amount} &fitems"
+          - "&7{unsellable} &8cannot be sold"
+      CONFIRM-BUTTON:
+        MATERIAL: "LIME_CONCRETE"
+        NAME: "&#f40d0dᴄᴏɴꜰɪʀᴍ"
+        LORE:
+          - "&fClick to sell all items"
+          - "&7(${total})"
+
+  ENCHANTMENT-MENU:
+    TITLE: "&8ᴘɪᴄᴋ ᴇɴᴄʜᴀɴᴛᴍᴇɴᴛѕ"
+    SIZE: 54
+    ITEMS-PER-PAGE: 45
+    CANCEL-SLOT: 48
+    CONFIRM-SLOT: 50
+    BACK-SLOT: 45
+    NEXT-SLOT: 53
+    BUTTONS:
+      ENCHANT-BUTTON:
+        NAME: "&#f40d0d{enchantment} {level}"
+        LORE:
+          - "&fClick to select this enchantment"
+        SELECTED-LORE:
+          - "&fClick to select this enchantment"
+          - ""
+          - "&aSelected"
+      CANCEL-BUTTON:
+        MATERIAL: "RED_CONCRETE"
+        NAME: "&#f40d0dᴄᴀɴᴄᴇʟ"
+        LORE:
+          - "&fClick to return"
+      CONFIRM-BUTTON:
+        MATERIAL: "LIME_CONCRETE"
+        NAME: "&#f40d0dᴄᴏɴꜰɪʀᴍ"
+        LORE:
+          - "&fClick to confirm"
+      GLASS-BUTTON:
+        MATERIAL: "LIGHT_GRAY_CONCRETE"
+        NAME: " "
+      NAVIGATION-BUTTON:
+        MATERIAL: "ARROW"
+        NEXT-NAME: "&#f40d0dNext Page"
+        PREVIOUS-NAME: "&#f40d0dPrevious Page"

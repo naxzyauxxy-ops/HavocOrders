@@ -1,0 +1,19 @@
+name: DonutOrders
+version: '${project.version}'
+main: net.eclipse.donutorders.DonutOrders
+api-version: '1.21'
+author: Eclipse
+description: Player-driven buy orders with a full menu system, Vault economy and sell-all support.
+softdepend: [Vault]
+commands:
+  orders:
+    description: Open the orders menu
+    usage: /orders [reload|sellall]
+    aliases: [order, donutorders]
+permissions:
+  donutorders.use:
+    description: Allows using /orders
+    default: true
+  donutorders.admin:
+    description: Allows /orders reload and bypassing order limits
+    default: op

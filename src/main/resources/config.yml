@@ -1,0 +1,118 @@
+# =====================================================
+#              DonutOrders - config.yml
+# =====================================================
+# NOTE: never paste this file publicly with real credentials in it.
+
+DEBUG: false
+
+DATABASE:
+  TYPE: "SQLITE" # SQLITE or MYSQL
+  MYSQL:
+    HOST: "127.0.0.1"
+    PORT: 3306
+    DATABASE: "donutorders"
+    USER: "CHANGE_ME"
+    PASSWORD: "CHANGE_ME"
+    USE-SSL: false
+
+SETTINGS:
+  MIN-PRICE-AMOUNT: 1.0
+  MAX-PRICE-AMOUNT: 1000000.0
+  MIN-ITEM-AMOUNT: 1
+  MAX-ITEM-AMOUNT: 3456
+  MAX-ORDERS-PER-PLAYER: 10
+  EXPIRE-DAYS: 7
+  # Charge the full order value up front and hold it in escrow.
+  # Deliverers are paid out of that escrow; unspent escrow is refunded on cancel/expiry.
+  ESCROW: true
+  CURRENCY-SYMBOL: "$"
+  SAVE-INTERVAL-SECONDS: 300
+  EXPIRY-CHECK-SECONDS: 60
+
+# Prices used by the "Sell All" button in the Collect Items menu.
+SELL:
+  ENABLED: true
+  # Fallback price per item when the material has no entry below. 0 = not sellable.
+  DEFAULT-PRICE: 0.0
+  # Multiplier applied on top of the resolved price.
+  MULTIPLIER: 1.0
+  PRICES:
+    DIAMOND: 100.0
+    NETHERITE_INGOT: 1000.0
+    EMERALD: 40.0
+    GOLD_INGOT: 25.0
+    IRON_INGOT: 15.0
+    COPPER_INGOT: 5.0
+    LAPIS_LAZULI: 8.0
+    REDSTONE: 5.0
+    COAL: 3.0
+    ANCIENT_DEBRIS: 500.0
+    ENCHANTED_GOLDEN_APPLE: 750.0
+    GOLDEN_APPLE: 80.0
+    TOTEM_OF_UNDYING: 400.0
+    ELYTRA: 1200.0
+    NETHER_STAR: 2000.0
+    SHULKER_SHELL: 150.0
+
+ITEM-RESTRICTIONS:
+  BLOCKED-ITEMS:
+    - "COMMAND_BLOCK"
+    - "CHAIN_COMMAND_BLOCK"
+    - "REPEATING_COMMAND_BLOCK"
+    - "COMMAND_BLOCK_MINECART"
+    - "STRUCTURE_BLOCK"
+    - "STRUCTURE_VOID"
+    - "JIGSAW"
+    - "BARRIER"
+    - "LIGHT"
+    - "BEDROCK"
+    - "END_PORTAL_FRAME"
+    - "SPAWNER"
+    - "DEBUG_STICK"
+    - "KNOWLEDGE_BOOK"
+
+MESSAGES:
+  PREFIX: ""
+  NO-PERMISSION: "&#f40d0dYou don't have permission to do that."
+  PLAYERS-ONLY: "&#f40d0dThis command can only be used by players."
+  RELOADED: "&#f40d0dConfiguration reloaded."
+  NO-ECONOMY: "&#f40d0dNo Vault economy provider is installed - orders are disabled."
+  INVALID-AMOUNT: "&#f40d0dInvalid amount."
+  INVALID-PRICE: "&#f40d0dInvalid price."
+  PRICE-TOO-LOW: "&#f40d0dThe minimum price is ${min}."
+  PRICE-TOO-HIGH: "&#f40d0dThe maximum price is ${max}."
+  AMOUNT-TOO-LOW: "&#f40d0dThe minimum amount is {min}."
+  AMOUNT-TOO-HIGH: "&#f40d0dThe maximum amount is {max}."
+  BLOCKED-ITEM: "&#f40d0dThat item cannot be ordered."
+  NO-ITEM-SELECTED: "&#f40d0dPick an item first."
+  NOT-ENOUGH-MONEY: "&#f40d0dYou need ${total} to place that order."
+  ORDERED: "&#f40d0dYou ordered {amount} {item}"
+  ORDER-CANCELLED: "&#f40d0dYou cancelled the order successfully"
+  MAX_ORDERS_REACHED: "&#f40d0dYou can't have more than {max} active orders at once."
+  DELIVERED: "&#f40d0dYou delivered {amount} {item} and received ${received}"
+  DELIVERY_RECEIVED: "&#f40d0d{deliverer} delivered {amount} {item} to your order!"
+  NOTHING-TO-DELIVER: "&#f40d0dYou don't have any matching items to deliver."
+  OWN-ORDER: "&#f40d0dYou cannot deliver to your own order."
+  REFUND-ISSUED: "&#f40d0dYou have been refunded ${refund} for undelivered items"
+  REFUND-ERROR: "&#f40d0dError processing your refund"
+  NO-REFUND: "&#f40d0dNo refund was issued because all items were delivered"
+  EXPIRED: "&#f40d0dYour order for {amount} {item} expired."
+  COLLECTED: "&#f40d0dYou collected {amount} {item}."
+  SELL_ALL_SOLD: "&#f40d0dYou sold items for ${total}."
+  SELL-DISABLED: "&#f40d0dSelling is disabled on this server."
+  SELL-NOTHING: "&#f40d0dNone of your collected items can be sold."
+  DROPPED-ALL: "&#f40d0dDropped {amount} items at your feet."
+  ORDER_DELETED: "&#f40d0dThis order has been cancelled and no longer exists."
+  ORDER_NO_LONGER_VALID: "&#f40d0dThis order is no longer accepting deliveries."
+  ORDER_FULL: "&#f40d0dThis order is already complete."
+  CANCEL-NOT-ALLOWED-PENDING-COLLECTION: "&#f40d0dYou cannot cancel the order: {amount} items to collect."
+  ENTER-AMOUNT: "&#f40d0dType the amount in chat, or 'cancel' to go back."
+  ENTER-PRICE: "&#f40d0dType the price in chat, or 'cancel' to go back."
+  ENTER-SEARCH: "&#f40d0dType your search in chat, or 'cancel' to go back."
+  INPUT-CANCELLED: "&#f40d0dCancelled."
+  COLLECT:
+    NOTHING_TO_COLLECT: "&#f40d0dNo items available for collection."
+    ITEM_ERROR: "&#f40d0dERROR: Could not load item data"
+    INVENTORY_FULL: "&#f40d0dPlease make space in your inventory first!"
+    SUCCESS: "&#f40d0d+{amount} {item} collected to your inventory"
+    PARTIAL_COLLECTION: "&#f40d0dOnly collected {collected} out of {total} items due to inventory space."
